@@ -23,4 +23,4 @@ pkhPush="14$publicKeyHash"
 script="${timePush}b27576a9${pkhPush}88ac"
 echo  $script
 
-bitcoin-cli -regtest decodescript $script
+# bitcoin-cli -regtest decodescript $script

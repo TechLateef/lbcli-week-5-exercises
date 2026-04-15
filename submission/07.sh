@@ -10,4 +10,4 @@ script="${script}21${publicKey2}"
 script="${script}21${publicKey3}"
 script="${script}53ae"
 echo $script
-bitcoin-cli -regtest decodescript $script
+# bitcoin-cli -regtest decodescript $script
