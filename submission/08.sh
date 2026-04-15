@@ -7,15 +7,15 @@ integer=4224679
 
 
 hex=$(printf '%08x\n' $integer | sed 's/^\(00\)*//')
-echo  $hex
+# echo  $hex
 
 lehex=$(echo $hex | sed 's/../& /g' | awk '{for(i=NF;i>=1;i--) printf "%s", $i; print ""}')
-echo  $lehex
+# echo  $lehex
 
 timePush="03$lehex"
 
 publicKeyHash=$(echo $publicKey | xxd -r -p | openssl dgst -sha256 -binary | openssl dgst -rmd160 | awk '{print $NF}')
-echo  $publicKeyHash
+# echo  $publicKeyHash
 
 
 pkhPush="14$publicKeyHash"
