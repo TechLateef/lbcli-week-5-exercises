@@ -3,4 +3,4 @@ transaction="020000000121654fa95d5a268abf96427e3292baed6c9f6d16ed9e80511070f9548
 
 redeem_script=$(bitcoin-cli -regtest decoderawtransaction $transaction | jq -r '.vin[0].scriptSig.asm' | awk '{print $NF}')
 
-bitcoin-cli -regtest decodescript $redeem_script | jq -r '.p2sh'
+bitcoin-cli -regtest decodescript $redeem_script | jq -r '.segwit["p2sh-segwit"]'
